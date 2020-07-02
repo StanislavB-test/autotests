@@ -134,4 +134,3 @@ class PivotAndTableHier(unittest.TestCase): #Проверяем иерархию
 
 if __name__ == '__main__':
     unittest.main()
-
