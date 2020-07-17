@@ -80,6 +80,9 @@ class DirectedHierAndDD(unittest.TestCase): #Проверяем иерархию
         assert result1 == 'ДГП №68', 'Упало при переходе из hierDirected1'  # проверка появившегося поля
         assert result2 == '3', 'Упало при переходе из hierDirected1'  # проверка появившегося поля
 
+    def tearDown(self):
+        self.driver.quit()
+
 
 
     def test_case(self):
@@ -88,6 +91,7 @@ class DirectedHierAndDD(unittest.TestCase): #Проверяем иерархию
         self.hierDirected1()
         self.hierDirected2()
         self.ddDirected2()
+        self.tearDown()
 
 
 

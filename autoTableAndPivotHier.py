@@ -121,6 +121,9 @@ class PivotAndTableHier(unittest.TestCase): #Проверяем иерархию
         assert result1 == '30+', 'Упало при переходе из значения показателя hierTable2'
         assert result2 == 'female', 'Упало при переходе из значения показателя hierTable2'
 
+    def tearDown(self):
+        self.driver.quit()
+
     def test_case(self):
         self.setup()
         self.login()
@@ -130,6 +133,7 @@ class PivotAndTableHier(unittest.TestCase): #Проверяем иерархию
         self.hierPivot4()
         self.hierTable1()
         self.hierTable2()
+        self.tearDown()
 
 
 if __name__ == '__main__':
