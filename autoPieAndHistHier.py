@@ -175,6 +175,9 @@ class PivotAndTableHier(unittest.TestCase): #Проверяем иерархию
         print(result)
         assert result == 'Невский район,female,50+,58,ГП №94', 'Упало при переходе из hierHist4'  # проверка появившегося поля
 
+    def tearDown(self):
+        self.driver.quit()
+
     def test_case(self):
         self.setup()
         self.login()
@@ -186,6 +189,7 @@ class PivotAndTableHier(unittest.TestCase): #Проверяем иерархию
         self.hierHist2()
         self.hierHist3()
         self.hierHist4()
+        self.tearDown()
 
 
 if __name__ == '__main__':
