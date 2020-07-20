@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 
 
-class PivotAndTableHier(unittest.TestCase): #Проверяем иерархию из круговой и гистограммы. Различные наборы
+class PieAndHistHier(unittest.TestCase): #Проверяем иерархию из круговой и гистограммы. Различные наборы
 
     def wait_by_css(self, element_locator):
         WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, element_locator)))
@@ -41,6 +41,7 @@ class PivotAndTableHier(unittest.TestCase): #Проверяем иерархию
             '.d3-context-menu > ul:nth-child(1) > li:nth-child(2)').click()  # клик по меню
         self.wait_by_css('#slice-container-746 > svg > g > g > g.nv-pieWrap.nvd3-svg > g > g > g.nv-pie > g:nth-child(1)') #Ждем пока прогрузится диаграмма
         self.wait_by_css('#slice-container-746 > svg:nth-child(1) > g:nth-child(1) > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g:nth-child(1) > g:nth-child(2) > text:nth-child(2)')
+        time.sleep(0.2)
         result = self.driver.find_element_by_css_selector('#slice-container-746 > svg:nth-child(1) > g:nth-child(1) > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g:nth-child(1) > g:nth-child(2) > text:nth-child(2)').text
         #Проверка значения по шапке
         print(result)
@@ -57,6 +58,7 @@ class PivotAndTableHier(unittest.TestCase): #Проверяем иерархию
             '#slice-container-746 > svg > g > g > g.nv-pieWrap.nvd3-svg > g > g > g.nv-pie > g:nth-child(2)')  # Ждем пока прогрузится диаграмма
         self.wait_by_css(
             '#slice-container-746 > svg > g > g > g.nv-legendWrap.nvd3-svg > g > g > g:nth-child(2) > text')
+        time.sleep(0.2)
         result = self.driver.find_element_by_css_selector(
             '#slice-container-746 > svg > g > g > g.nv-legendWrap.nvd3-svg > g > g > g:nth-child(2) > text').text
         # Проверка значения по шапке
@@ -74,6 +76,7 @@ class PivotAndTableHier(unittest.TestCase): #Проверяем иерархию
             '.d3-context-menu > ul:nth-child(1) > li:nth-child(2)').click()  # клик по меню
         self.wait_by_css(
             '#slice-container-747 > svg > g > g > g.nv-pieWrap.nvd3-svg > g > g > g.nv-pie > g:nth-child(2)')  # Ждем пока прогрузится диаграмма
+        time.sleep(0.2)
         result = self.driver.find_element_by_css_selector(
             '#slice-container-747 > svg > g > g > g.nv-legendWrap.nvd3-svg > g > g > g:nth-child(1) > text').text
         # Проверка значения по шапке
@@ -93,6 +96,7 @@ class PivotAndTableHier(unittest.TestCase): #Проверяем иерархию
             '#slice-container-747 > svg > g > g > g.nv-pieWrap.nvd3-svg > g > g > g.nv-pie > g:nth-child(1)')  # Ждем пока прогрузится диаграмма
         self.wait_by_css(
             '#slice-container-747 > svg > g > g > g.nv-legendWrap.nvd3-svg > g > g > g:nth-child(1) > text')
+        time.sleep(0.4)
         result = self.driver.find_element_by_css_selector(
             '#slice-container-747 > svg > g > g > g.nv-legendWrap.nvd3-svg > g > g > g:nth-child(1) > text').text
         # Проверка значения по шапке
@@ -112,6 +116,7 @@ class PivotAndTableHier(unittest.TestCase): #Проверяем иерархию
         self.wait_by_css(
             '#slice-container-748 > svg > g > g > g.nv-barsWrap.nvd3-svg > g > g > g > g > rect:nth-child(1)')  # Ждем пока прогрузится диаграмма
         self.wait_by_css('#slice-container-748 > svg > g > g > g.nv-x.nv-axis.nvd3-svg > g > g > g:nth-child(1) > text')
+        time.sleep(0.2)
         result = self.driver.find_element_by_css_selector(
             '#slice-container-748 > svg > g > g > g.nv-x.nv-axis.nvd3-svg > g > g > g:nth-child(1) > text').text
         # Проверка значения по шапке
@@ -130,6 +135,7 @@ class PivotAndTableHier(unittest.TestCase): #Проверяем иерархию
         self.wait_by_css(
             '#slice-container-749 > svg > g > g > g.nv-barsWrap.nvd3-svg > g > g > g > g > rect:nth-child(1)')  # Ждем пока прогрузится диаграмма
         self.wait_by_css('#slice-container-749 > svg > g > g > g.nv-x.nv-axis.nvd3-svg > g > g > g:nth-child(1) > text')
+        time.sleep(0.2)
         result = self.driver.find_element_by_css_selector(
             '#slice-container-749 > svg > g > g > g.nv-x.nv-axis.nvd3-svg > g > g > g:nth-child(1) > text').text
         # Проверка значения по шапке
@@ -150,6 +156,7 @@ class PivotAndTableHier(unittest.TestCase): #Проверяем иерархию
             '#slice-container-749 > svg > g > g > g.nv-barsWrap.nvd3-svg > g > g > g > g > rect:nth-child(2)')  # Ждем пока прогрузится диаграмма
         self.wait_by_css(
             '#slice-container-749 > svg > g > g > g.nv-x.nv-axis.nvd3-svg > g > g > g:nth-child(1) > text')
+        time.sleep(0.2)
         result = self.driver.find_element_by_css_selector(
             '#slice-container-749 > svg > g > g > g.nv-x.nv-axis.nvd3-svg > g > g > g:nth-child(1) > text').text
         # Проверка значения по шапке
@@ -169,14 +176,15 @@ class PivotAndTableHier(unittest.TestCase): #Проверяем иерархию
         self.wait_by_css(
             '#slice-container-749 > svg > g > g > g.nv-barsWrap.nvd3-svg > g > g > g > g > rect:nth-child(2)')
         self.wait_by_css('#slice-container-749 > svg > g > g > g.nv-x.nv-axis.nvd3-svg > g > g > g:nth-child(1) > text')# Ждем пока прогрузится диаграмма
+        time.sleep(0.2)
         result = self.driver.find_element_by_css_selector(
             '#slice-container-749 > svg > g > g > g.nv-x.nv-axis.nvd3-svg > g > g > g:nth-child(1) > text').text
         # Проверка значения по шапке
         print(result)
         assert result == 'Невский район,female,50+,58,ГП №94', 'Упало при переходе из hierHist4'  # проверка появившегося поля
 
-    def tearDown(self):
-        self.driver.quit()
+    #def tearDown(self):
+     #   self.driver.quit()
 
     def test_case(self):
         self.setup()
@@ -189,7 +197,7 @@ class PivotAndTableHier(unittest.TestCase): #Проверяем иерархию
         self.hierHist2()
         self.hierHist3()
         self.hierHist4()
-        self.tearDown()
+       # self.tearDown()
 
 
 if __name__ == '__main__':
