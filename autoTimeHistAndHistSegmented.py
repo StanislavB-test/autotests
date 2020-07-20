@@ -38,6 +38,7 @@ class TimeHistAndHistSegmented(unittest.TestCase): #Проверяем иера�
         actions.move_to_element(clickPoint).context_click().perform()
         self.driver.find_element_by_css_selector(
             '.d3-context-menu > ul:nth-child(1) > li:nth-child(4)').click()  # клик по меню 2=1 пункт, 4 = 2 пункт
+        time.sleep(0.5)
         self.wait_by_css('#slice-container-753 > svg > g > g > g.nv-barsWrap.nvd3-svg > g > g > g > g.nv-group.nv-series-1 > rect') #Ждем пока прогрузится диаграмма
         self.wait_by_css('#slice-container-753 > svg > g > g > g.nv-legendWrap.nvd3-svg > g > g > g:nth-child(1) > text')
 
@@ -51,6 +52,7 @@ class TimeHistAndHistSegmented(unittest.TestCase): #Проверяем иера�
         actions.move_to_element(clickPoint).context_click().perform()
         self.driver.find_element_by_css_selector(
             '.d3-context-menu > ul:nth-child(1) > li:nth-child(4)').click()  # клик по меню 2=1 пункт, 4 = 2 пункт
+        time.sleep(0.5)
         self.wait_by_css(
             '#slice-container-753 > svg > g > g > g.nv-barsWrap.nvd3-svg > g > g > g > g.nv-group.nv-series-1 > rect')  # Ждем пока прогрузится диаграмма
         self.wait_by_css(
@@ -67,6 +69,7 @@ class TimeHistAndHistSegmented(unittest.TestCase): #Проверяем иера�
         actions.move_to_element(clickPoint).context_click().perform()
         self.driver.find_element_by_css_selector(
             '.d3-context-menu > ul:nth-child(1) > li:nth-child(2)').click()  # клик по меню 2=1 пункт, 4 = 2 пункт
+        time.sleep(0.5)
         self.wait_by_css(
             '#slice-container-753 > svg > g > g > g.nv-barsWrap.nvd3-svg > g > g > g > g.nv-group.nv-series-1 > rect')  # Ждем пока прогрузится диаграмма
         self.wait_by_css(
@@ -83,6 +86,7 @@ class TimeHistAndHistSegmented(unittest.TestCase): #Проверяем иера�
         actions.move_to_element(clickPoint).context_click().perform()
         self.driver.find_element_by_css_selector(
             '.d3-context-menu > ul:nth-child(1) > li:nth-child(2)').click()  # клик по меню 2=1 пункт, 4 = 2 пункт
+        time.sleep(0.5)
         self.wait_by_css(
             '#slice-container-753 > svg:nth-child(1) > g:nth-child(1) > g:nth-child(1) > g:nth-child(3) > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g:nth-child(1)')  # Ждем пока прогрузится диаграмма
         self.wait_by_css(
@@ -123,6 +127,7 @@ class TimeHistAndHistSegmented(unittest.TestCase): #Проверяем иера�
         actions.move_to_element(clickPoint).context_click().perform()
         self.driver.find_element_by_css_selector(
             '.d3-context-menu > ul:nth-child(1) > li:nth-child(4)').click()  # клик по меню 2=1 пункт, 4 = 2 пункт
+        time.sleep(0.5)
         self.wait_by_css(
             '#slice-container-750 > svg > g > g > g.nv-barsWrap.nvd3-svg > g > g > g > g > rect:nth-child(1)')  # Ждем пока прогрузится диаграмма
         self.wait_by_css(
@@ -138,6 +143,7 @@ class TimeHistAndHistSegmented(unittest.TestCase): #Проверяем иера�
         actions.move_to_element(clickPoint).context_click().perform()
         self.driver.find_element_by_css_selector(
             '.d3-context-menu > ul:nth-child(1) > li:nth-child(4)').click()  # клик по меню 2=1 пункт, 4 = 2 пункт
+        time.sleep(0.5)
         self.wait_by_css(
             '#slice-container-750 > svg > g > g > g.nv-barsWrap.nvd3-svg > g > g > g > g > rect:nth-child(1)')  # Ждем пока прогрузится диаграмма
         self.wait_by_css(
@@ -153,6 +159,7 @@ class TimeHistAndHistSegmented(unittest.TestCase): #Проверяем иера�
         actions.move_to_element(clickPoint).context_click().perform()
         self.driver.find_element_by_css_selector(
             '.d3-context-menu > ul:nth-child(1) > li:nth-child(2)').click()  # клик по меню 2=1 пункт, 4 = 2 пункт
+        time.sleep(0.5)
 
     def hierHistSegmented4(self): # autoHist3
         self.wait_by_css(
@@ -164,6 +171,7 @@ class TimeHistAndHistSegmented(unittest.TestCase): #Проверяем иера�
         actions.move_to_element(clickPoint).context_click().perform()
         self.driver.find_element_by_css_selector(
             '.d3-context-menu > ul:nth-child(1) > li:nth-child(2)').click()  # клик по меню 2=1 пункт, 4 = 2 пункт
+        time.sleep(0.5)
         self.wait_by_css(
             '#slice-container-750 > svg:nth-child(1) > g:nth-child(1) > g:nth-child(1) > g:nth-child(3) > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g:nth-child(1) > rect:nth-child(1)')  # Ждем пока прогрузится диаграмма
         self.driver.find_element_by_css_selector('#controls_750 > a.exploreChart > i').click()

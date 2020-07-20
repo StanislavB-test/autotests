@@ -32,6 +32,7 @@ class DirectedHierAndDD(unittest.TestCase): #Проверяем иерархию
         actions.move_to_element(clickPoint).context_click().perform()
         self.driver.find_element_by_css_selector(
             '.d3-context-menu > ul:nth-child(1) > li:nth-child(2)').click()  # клик по меню
+        time.sleep(0.5)
         self.wait_by_css('#slice-container-740 > svg > g:nth-child(4) > circle')
         result = self.driver.find_element_by_css_selector('#slice-container-740 > svg > g:nth-child(5) > text').text
         print(result)
@@ -46,6 +47,7 @@ class DirectedHierAndDD(unittest.TestCase): #Проверяем иерархию
         actions.move_to_element(clickPoint).context_click().perform()
         self.driver.find_element_by_css_selector(
             '.d3-context-menu > ul:nth-child(1) > li:nth-child(2)').click()  # клик по меню
+        time.sleep(0.5)
         self.wait_by_css('#slice-container-740 > svg > g:nth-child(13) > circle')
         result = self.driver.find_element_by_css_selector('#slice-container-740 > svg > g:nth-child(13) > text').text
         print(result)
@@ -60,6 +62,7 @@ class DirectedHierAndDD(unittest.TestCase): #Проверяем иерархию
         actions.move_to_element(clickPoint).context_click().perform()
         self.driver.find_element_by_css_selector(
             '.d3-context-menu ul li:nth-of-type(4)').click()  # клик по меню
+        time.sleep(0.5)
         self.wait_by_css('div:nth-of-type(1) > .slice-cell .slice_container.table '
                          '> .dataTables_wrapper.dt-bootstrap.form-inline.no-footer .dataTables_scrollBody '
                          '> table[role="grid"] > tbody > tr:nth-of-type(1) > td:nth-of-type(1) > .like-pre')
