@@ -3,6 +3,7 @@ import unittest
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
+import time
 
 class PivotAndTableHier(unittest.TestCase): #Проверяем иерархию из шапки и значений таблицы и таблицы среза
 
@@ -31,6 +32,7 @@ class PivotAndTableHier(unittest.TestCase): #Проверяем иерархию
         actions.move_to_element(clickPoint).context_click().perform()
         self.driver.find_element_by_css_selector(
             '.d3-context-menu > ul:nth-child(1) > li:nth-child(2)').click()  # клик по меню
+        time.sleep(0.5)
         self.wait_by_css('#slice-container-698 > table > thead > tr:nth-child(3) > th:nth-child(2)')
         result = self.driver.find_element_by_css_selector('#slice-container-698 > '
                                                           'table > thead > tr:nth-child(3) > th:nth-child(2)').text
@@ -46,6 +48,7 @@ class PivotAndTableHier(unittest.TestCase): #Проверяем иерархию
                                                               'table > thead > tr:nth-child(2) > th:nth-child(2)')
         actions.move_to_element(clickPoint).context_click().perform()
         self.driver.find_element_by_css_selector('.d3-context-menu > ul:nth-child(1) > li:nth-child(2)').click()  # клик по меню
+        time.sleep(0.5)
         self.wait_by_css('#slice-container-698 > table > thead > tr:nth-child(3) > th:nth-child(2)')
         result = self.driver.find_element_by_css_selector('#slice-container-698 > '
                                                           'table > thead > tr:nth-child(3) > th:nth-child(2)').text
@@ -60,6 +63,7 @@ class PivotAndTableHier(unittest.TestCase): #Проверяем иерархию
                                                               'table > thead > tr:nth-child(3) > th:nth-child(5)')
         actions.move_to_element(clickPoint).context_click().perform()
         self.driver.find_element_by_css_selector('.d3-context-menu > ul:nth-child(1) > li:nth-child(3)').click()  # клик по меню
+        time.sleep(0.5)
         self.wait_by_css('#slice-container-698 > table > thead > tr:nth-child(3) > th:nth-child(3)')
         result = self.driver.find_element_by_css_selector('#slice-container-698 > '
                                                           'table > thead > tr:nth-child(3) > th:nth-child(3)').text
@@ -78,6 +82,7 @@ class PivotAndTableHier(unittest.TestCase): #Проверяем иерархию
                                                               'table > tbody > tr:nth-child(2) > th')
         actions.move_to_element(clickPoint).context_click().perform()
         self.driver.find_element_by_css_selector('.d3-context-menu > ul:nth-child(1) > li:nth-child(3)').click()  # клик по меню
+        time.sleep(0.5)
         self.wait_by_css('#slice-container-698 > table > tbody > tr:nth-child(1) > th:nth-child(3)')
         result = self.driver.find_element_by_css_selector('#slice-container-698 > '
                                                           'table > tbody > tr:nth-child(1) > th:nth-child(3)').text
@@ -97,6 +102,7 @@ class PivotAndTableHier(unittest.TestCase): #Проверяем иерархию
         actions.move_to_element(clickPoint).context_click().perform()
         self.driver.find_element_by_css_selector(
             '.d3-context-menu > ul:nth-child(1) > li:nth-child(2)').click()  # клик по первому пункту меню
+        time.sleep(0.5)
         self.wait_by_css('.dataTables_scrollHeadInner .sorting:nth-child(2)')
         result = self.driver.find_element_by_css_selector('.dataTables_scrollHeadInner .sorting:nth-child(2)').text
         print(result)
@@ -112,6 +118,7 @@ class PivotAndTableHier(unittest.TestCase): #Проверяем иерархию
         actions.move_to_element(clickPoint).context_click().perform()
         self.driver.find_element_by_css_selector(
             '.d3-context-menu > ul:nth-child(1) > li:nth-child(2)').click()  # клик по первому пункту меню
+        time.sleep(0.5)
         self.wait_by_css('tr.odd:nth-child(3) > td:nth-child(4) > span:nth-child(1)')
         result1 = self.driver.find_element_by_css_selector('tr.odd:nth-child(3) '
                                                            '> td:nth-child(4) > span:nth-child(1)').text
