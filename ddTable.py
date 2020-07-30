@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 
 
-class ddTable(unittest.TestCase): #Проверяем иерархию из круговой и гистограммы. Различные наборы
+class ddTable(unittest.TestCase): #Проверяем dd из таблицы
 
     def wait_by_css(self, element_locator):
         WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, element_locator)))
@@ -28,11 +28,11 @@ class ddTable(unittest.TestCase): #Проверяем иерархию из кр
         self.driver.find_element_by_css_selector("input.btn").click()
         self.driver.get('http://ss.dev.bnvt.ru/superset/dashboard/181')
 
-    def ddTable_Pivot(self): #table_dd; Переход по 1.19к
+    def ddTable_Pivot(self): #table_dd; Переход по 703
         self.wait_by_css('#slice-container-762 > div > div > div:nth-child(2) > div > div')
         self.wait_by_css('tr:nth-of-type(1) > td:nth-of-type(3) > .like-pre')
         actions = webdriver.ActionChains(self.driver)
-        clickPoint = self.driver.find_element_by_css_selector('td[title="1,191"]')
+        clickPoint = self.driver.find_element_by_css_selector('td[title="703"]')
         actions.move_to_element(clickPoint).context_click().perform()
         self.driver.find_element_by_css_selector('.d3-context-menu > ul:nth-child(1) > li:nth-child(2)').click()  # клик по pivot
         time.sleep(0.5)
@@ -41,7 +41,7 @@ class ddTable(unittest.TestCase): #Проверяем иерархию из кр
         result = self.driver.find_element_by_css_selector('#slice-container-754 > table > tbody > tr:nth-child(1) > td:nth-child(3)').text
         #Проверка значения по шапке
         print(result)
-        assert result == '1.19k', 'Упало при переходе из ddTable_Pivot'  # проверка появившегося поля
+        assert result == '703', 'Упало при переходе из ddTable_Pivot'  # проверка появившегося поля
         self.driver.find_element_by_css_selector('#controls_754 > a:nth-child(1) > i').click()
 
     def ddTable_Hist(self): #table_dd; Переход по 1.19к
