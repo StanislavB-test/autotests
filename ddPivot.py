@@ -192,12 +192,8 @@ class ddPivot(unittest.TestCase): #Проверяем dd из таблицы с�
         assert result == '703 Единица измерения', 'Упало при переходе из ddTable_Speed'  # проверка появившегося поля
         self.driver.find_element_by_css_selector('#controls_755 > a:nth-child(1) > i').click()
 
-
-
-
-
-    #def tearDown(self):
-        #self.driver.quit()
+    def tearDown(self):
+        self.driver.quit()
 
     def test_case(self):
         self.setup()
@@ -209,7 +205,7 @@ class ddPivot(unittest.TestCase): #Проверяем dd из таблицы с�
         self.ddPivot_Time_Hist()
         self.ddPivot_Directed()
         self.ddPivot_Speed()
-        #self.tearDown()
+        self.tearDown()
 
 
 if __name__ == '__main__':
