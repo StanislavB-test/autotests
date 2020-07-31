@@ -85,7 +85,7 @@ class ddTable(unittest.TestCase): #Проверяем dd из таблицы
         self.wait_by_css('#slice-container-762 > div > div > div:nth-child(2) > div > div')
         self.wait_by_css('tr:nth-of-type(1) > td:nth-of-type(3) > .like-pre')
         actions = webdriver.ActionChains(self.driver)
-        clickPoint = self.driver.find_element_by_css_selector('td[title="1,191"]')
+        clickPoint = self.driver.find_element_by_css_selector('td[title="703"]')
         actions.move_to_element(clickPoint).context_click().perform()
         self.driver.find_element_by_css_selector(
             '.d3-context-menu > ul:nth-child(1) > li:nth-child(5)').click()  # клик по line
@@ -97,15 +97,15 @@ class ddTable(unittest.TestCase): #Проверяем dd из таблицы
         resultDate = self.driver.find_element_by_css_selector('#slice-container-754 > svg > g > g > g.nv-focus > g.nv-x.nv-axis.nvd3-svg > g > g > g > text').text
         print(resultText)
         print(resultDate)
-        assert resultText == '7, Красногвардейский...', 'Упало при переходе из ddTable_Hist'  # проверка появившегося поля
-        assert resultDate == 'Ср Март 1', 'Упало при переходе из ddTable_Hist'
+        assert resultText == '1, Красногвардейский...', 'Упало при переходе из ddTable_Linet'  # проверка появившегося поля
+        assert resultDate == 'Ср Март 1', 'Упало при переходе из ddTable_Line'
         self.driver.find_element_by_css_selector('#controls_754 > a:nth-child(1) > i').click()
 
     def ddTable_Directed(self):
         self.wait_by_css('#slice-container-762 > div > div > div:nth-child(2) > div > div')
         self.wait_by_css('tr:nth-of-type(1) > td:nth-of-type(3) > .like-pre')
         actions = webdriver.ActionChains(self.driver)
-        clickPoint = self.driver.find_element_by_css_selector('td[title="1,191"]')
+        clickPoint = self.driver.find_element_by_css_selector('td[title="703"]')
         actions.move_to_element(clickPoint).context_click().perform()
         self.driver.find_element_by_css_selector(
             '.d3-context-menu > ul:nth-child(1) > li:nth-child(6)').click()  # клик по directed
@@ -119,7 +119,7 @@ class ddTable(unittest.TestCase): #Проверяем dd из таблицы
             '#slice-container-754 > svg > g:nth-child(4) > text').text
         print(resultText)
         print(resultDate)
-        assert resultText == '7', 'Упало при переходе из ddTable_Hist'  # проверка появившегося поля
+        assert resultText == '1', 'Упало при переходе из ddTable_Hist'  # проверка появившегося поля
         assert resultDate == 'Ср Март 1', 'Упало при переходе из ddTable_Hist'
         self.driver.find_element_by_css_selector('#controls_754 > a:nth-child(1) > i').click()
 

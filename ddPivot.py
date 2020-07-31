@@ -209,12 +209,6 @@ class ddPivot(unittest.TestCase): #Проверяем dd из таблицы с�
         self.ddPivot_Time_Hist()
         self.ddPivot_Directed()
         self.ddPivot_Speed()
-        #self.ddTable_Hist()
-        #self.ddTable_Pie()
-        #self.ddTable_Line()
-        #self.ddTable_Directed()
-        #self.ddTable_Speed()
-        #self.ddTable_TimeHist()
         #self.tearDown()
 
 
