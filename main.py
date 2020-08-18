@@ -8,6 +8,8 @@ import ddPie as ddpie
 import ddLine as ddl
 import ddDirected as ddd
 import ddTimeHist as ddth
+import ddSpeed as dds
+import ddHist as ddh
 
 _DirectedHierAndDD = dd.DirectedHierAndDD()
 _DirectedHierAndDD.test_case()
@@ -39,3 +41,8 @@ _ddline.test_case()
 _dddirected = ddd.ddDirected()
 _dddirected.test_case()
 
+_ddspeed = dds.ddSpeed()
+_ddspeed.test_case()
+
+_ddhist = ddh.ddHist()
+_ddhist.test_case()
