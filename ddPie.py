@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 
 
-class ddPie(unittest.TestCase): #Проверяем dd из таблицы среза
+class ddPie(unittest.TestCase): #Проверяем dd с круговой
 
     def wait_by_css(self, element_locator):
         WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, element_locator)))
@@ -183,7 +183,7 @@ class ddPie(unittest.TestCase): #Проверяем dd из таблицы ср�
             '#slice-container-757 > div > div:nth-child(2) > svg > g:nth-child(4) > text').text
         # Проверка значения по значениям
         print(result)
-        assert result == '968 Единица измерения', 'Упало при переходе из ddPie_Speed'
+        assert result == '703 Единица измерения', 'Упало при переходе из ddPie_Speed'
         self.driver.find_element_by_css_selector('#controls_757 > a:nth-child(1) > i').click()
 
     def ddPie_Directed(self): #с круговой на граф; Переход по 703, 1 год, 2017-03-01

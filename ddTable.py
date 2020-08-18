@@ -38,10 +38,16 @@ class ddTable(unittest.TestCase): #Проверяем dd из таблицы
         time.sleep(0.5)
         self.wait_by_css('#slice-container-754 > table > tbody > tr:nth-child(1) > th:nth-child(2)') #Ждем пока прогрузится диаграмма
         self.wait_by_css('#slice-container-754 > table > tbody > tr:nth-child(1) > td:nth-child(3)')
-        result = self.driver.find_element_by_css_selector('#slice-container-754 > table > tbody > tr:nth-child(1) > td:nth-child(3)').text
+        result_count = self.driver.find_element_by_css_selector('#slice-container-754 > table > tbody > tr:nth-child(1) > td:nth-child(3)').text
+        result_age = self.driver.find_element_by_css_selector('#slice-container-754 > table > tbody > tr:nth-child(1) > th:nth-child(1)').text
+        result_date = self.driver.find_element_by_css_selector('#slice-container-754 > table > tbody > tr:nth-child(1) > th:nth-child(2)').text
+        result_district = self.driver.find_element_by_css_selector('#slice-container-754 > table > thead > tr:nth-child(2) > th:nth-child(3)').text
         #Проверка значения по шапке
-        print(result)
-        assert result == '703', 'Упало при переходе из ddTable_Pivot'  # проверка появившегося поля
+        print(result_count, result_age, result_district, result_date)
+        assert result_count == '703', 'Упало при переходе из ddTable_Pivot'  # проверка появившегося поля
+        assert result_age == '1', 'Упало при переходе из ddTable_Pivot'
+        assert result_district == 'Красногвардейский район', 'Упало при переходе из ddTable_Pivot'
+        assert result_date == '2017-03-01 00:00:00', 'Упало при переходе из ddTable_Pivot'
         self.driver.find_element_by_css_selector('#controls_754 > a:nth-child(1) > i').click()
 
     def ddTable_Hist(self): #table_dd; Переход по 1.19к
@@ -78,10 +84,10 @@ class ddTable(unittest.TestCase): #Проверяем dd из таблицы
         result = self.driver.find_element_by_css_selector(
             '#slice-container-754 > svg > g > g > g.nv-legendWrap.nvd3-svg > g > g > g > text').text
         print(result)
-        assert result == '7,2017-03-01 00:00:00', 'Упало при переходе из ddTable_Hist'  # проверка появившегося поля
+        assert result == '7,2017-03-01 00:00:00', 'Упало при переходе из ddTable_Pie'  # проверка появившегося поля
         self.driver.find_element_by_css_selector('#controls_754 > a:nth-child(1) > i').click()
 
-    def ddTable_Line(self): #table_dd; Переход по 1.19к
+    def ddTable_Line(self): #table_dd; Переход по 703
         self.wait_by_css('#slice-container-762 > div > div > div:nth-child(2) > div > div')
         self.wait_by_css('tr:nth-of-type(1) > td:nth-of-type(3) > .like-pre')
         actions = webdriver.ActionChains(self.driver)
@@ -97,11 +103,11 @@ class ddTable(unittest.TestCase): #Проверяем dd из таблицы
         resultDate = self.driver.find_element_by_css_selector('#slice-container-754 > svg > g > g > g.nv-focus > g.nv-x.nv-axis.nvd3-svg > g > g > g > text').text
         print(resultText)
         print(resultDate)
-        assert resultText == '1, Красногвардейский...', 'Упало при переходе из ddTable_Linet'  # проверка появившегося поля
+        assert resultText == '1, Красногвардейский...', 'Упало при переходе из ddTable_Line'  # проверка появившегося поля
         assert resultDate == 'Ср Март 1', 'Упало при переходе из ddTable_Line'
         self.driver.find_element_by_css_selector('#controls_754 > a:nth-child(1) > i').click()
 
-    def ddTable_Directed(self):
+    def ddTable_Directed(self): #table_dd; Переход по 703
         self.wait_by_css('#slice-container-762 > div > div > div:nth-child(2) > div > div')
         self.wait_by_css('tr:nth-of-type(1) > td:nth-of-type(3) > .like-pre')
         actions = webdriver.ActionChains(self.driver)
@@ -119,11 +125,11 @@ class ddTable(unittest.TestCase): #Проверяем dd из таблицы
             '#slice-container-754 > svg > g:nth-child(4) > text').text
         print(resultText)
         print(resultDate)
-        assert resultText == '1', 'Упало при переходе из ddTable_Hist'  # проверка появившегося поля
-        assert resultDate == 'Ср Март 1', 'Упало при переходе из ddTable_Hist'
+        assert resultText == '1', 'Упало при переходе из ddTable_Directed'  # проверка появившегося поля
+        assert resultDate == 'Ср Март 1', 'Упало при переходе из ddTable_Directed'
         self.driver.find_element_by_css_selector('#controls_754 > a:nth-child(1) > i').click()
 
-    def ddTable_Speed(self):
+    def ddTable_Speed(self): #table_dd; Переход по 1.19k
         self.wait_by_css('#slice-container-762 > div > div > div:nth-child(2) > div > div')
         self.wait_by_css('tr:nth-of-type(1) > td:nth-of-type(3) > .like-pre')
         actions = webdriver.ActionChains(self.driver)
@@ -141,7 +147,7 @@ class ddTable(unittest.TestCase): #Проверяем dd из таблицы
         assert result == '1.19k Единица измерения', 'Упало при переходе из ddTable_Speed'  # проверка появившегося поля
         self.driver.find_element_by_css_selector('#controls_754 > a:nth-child(1) > i').click()
 
-    def ddTable_TimeHist(self):
+    def ddTable_TimeHist(self): #table_dd; Переход по 1.19k
         self.wait_by_css('#slice-container-762 > div > div > div:nth-child(2) > div > div')
         self.wait_by_css('tr:nth-of-type(1) > td:nth-of-type(3) > .like-pre')
         actions = webdriver.ActionChains(self.driver)

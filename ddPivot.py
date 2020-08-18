@@ -120,8 +120,8 @@ class ddPivot(unittest.TestCase): #Проверяем dd из таблицы с�
         # Проверка значения по шапке
         print(result_age_district)
         print(result_date)
-        assert result_age_district == '1,Красногвардейский район', 'Упало из ddPivot_Line'
-        assert result_date == '2017-03-01 00:00:00', 'Упало из ddPivot_Line'
+        assert result_age_district == '1,Красногвардейский район', 'Упало из ddPivot_Hist'
+        assert result_date == '2017-03-01 00:00:00', 'Упало из ddPivot_Hist'
         self.driver.find_element_by_css_selector('#controls_755 > a:nth-child(1) > i').click()
 
     def ddPivot_Time_Hist(self): #переход со среза на временную гистограмму; Переход по 703, ДГП №68, 1 год, 2017-03-01
@@ -145,7 +145,7 @@ class ddPivot(unittest.TestCase): #Проверяем dd из таблицы с�
         print(result_age_district)
         print(result_date)
         assert result_age_district == '1, Красногвардейский...', 'Упало из ddPivot_Time_Hist'
-        assert result_date == 'Ср Март 1', 'Упало из ddPivot_Hist'
+        assert result_date == 'Ср Март 1', 'Упало из ddPivot_Time_Hist'
         self.driver.find_element_by_css_selector('#controls_755 > a:nth-child(1) > i').click()
 
     def ddPivot_Directed(self): #переход со среза на граф; Переход по 703, ДГП №68, 1 год, 2017-03-01
@@ -168,8 +168,8 @@ class ddPivot(unittest.TestCase): #Проверяем dd из таблицы с�
         # Проверка значения по шапке
         print(result_age)
         print(result_date)
-        assert result_age == '1', 'Упало из ddPivot_Time_Hist'
-        assert result_date == 'Ср Март 1', 'Упало из ddPivot_Hist'
+        assert result_age == '1', 'Упало из ddPivot_Directed'
+        assert result_date == 'Ср Март 1', 'Упало из ddPivot_Directed'
         self.driver.find_element_by_css_selector('#controls_755 > a:nth-child(1) > i').click()
 
     def ddPivot_Speed(self):
@@ -189,7 +189,7 @@ class ddPivot(unittest.TestCase): #Проверяем dd из таблицы с�
         result = self.driver.find_element_by_css_selector(
             '#slice-container-755 > div > div:nth-child(2) > svg > g:nth-child(4) > text').text
         print(result)
-        assert result == '703 Единица измерения', 'Упало при переходе из ddTable_Speed'  # проверка появившегося поля
+        assert result == '703 Единица измерения', 'Упало при переходе из ddPivot_Speed'  # проверка появившегося поля
         self.driver.find_element_by_css_selector('#controls_755 > a:nth-child(1) > i').click()
 
     def tearDown(self):
